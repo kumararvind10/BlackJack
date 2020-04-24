@@ -9,7 +9,7 @@ let connectionStr = config.get('db.dbUrl');
 
 
 // connection to mongoDb.
-mongoose.connect(connectionStr) // mongodb://localhost:27017/PlayingCard   ---- for your reference only.
+mongoose.connect("mongodb://localhost:27017/PlayingCard") // mongodb://localhost:27017/PlayingCard   ---- for your reference only.
     .then(() => console.log("connected to Mongo db..."))
     .catch((err) => console.error("could not connect to MongoDb ", err));
 
