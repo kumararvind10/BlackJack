@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 const config = require('config');
 let methods = {};
-let connectionStr = config.get('db.dbUrl');
+//let connectionStr = config.get('db.dbUrl');
 
 
 // connection to mongoDb.
