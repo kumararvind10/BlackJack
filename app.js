@@ -8,6 +8,8 @@ const playerDeck = require('./controller/playerHit');
 const dealerDeck = require('./controller/dealerHit');
 const gameHistory = require('./controller/getPlayerHistory');
 const app = express();
+require('./module/prod')(app);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
