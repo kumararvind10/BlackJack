@@ -9,7 +9,7 @@ let methods = {};
 
 
 // connection to mongoDb.
-mongoose.connect("mongodb://localhost:27017/PlayingCard") // mongodb://localhost:27017/PlayingCard   ---- for your reference only.
+mongoose.connect("mongodb+srv://arvind:5RDiyMqWTkuMRjlT@cluster0-qr5jv.mongodb.net/PlayingCard?retryWrites=true&w=majority") // mongodb://localhost:27017/PlayingCard   ---- for your reference only.
     .then(() => console.log("connected to Mongo db..."))
     .catch((err) => console.error("could not connect to MongoDb ", err));
 

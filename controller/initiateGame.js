@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../module/db');
 const initiateGame = require('../module/initiateGame');
 
-router.post('/game/initiate/:deck_count', async (req, res, next) => {
+router.get('/game/initiate/:deck_count', async (req, res, next) => {
     try {
         const deck_count = parseInt(req.params.deck_count);
         const pId = Math.floor(Math.random() * Math.floor(456738)) + "P";

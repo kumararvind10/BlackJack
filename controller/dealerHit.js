@@ -4,7 +4,7 @@ const draw = require('../module/dealerHit');
 const db = require('../module/db');
 
 
-router.post('/dealer/draw/:deck_id', async (req, res, next) => {
+router.get('/dealer/draw/:deck_id', async (req, res, next) => {
     try {
         let param;
 

@@ -6,7 +6,7 @@ const score = require('../module/scoreCalculate');
 
 //api endpoint for player draw card
  
-router.post('/player/draw/:deck_id', async (req, res, next) => {
+router.get('/player/draw/:deck_id', async (req, res, next) => {
 
     try {
         const deck_id = req.params.deck_id;
