@@ -22,18 +22,21 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // route endpoint for blackjack game functionality
+app.get('/', (req, res) => {
+  res.render('index', { title: "BlackJack API using Nodejs and MongoDB." });
+});
 app.use('/', gameInitiate);
-app.use('/',playerDeck);
-app.use('/',dealerDeck);
-app.use('/',gameHistory);
+app.use('/', playerDeck);
+app.use('/', dealerDeck);
+app.use('/', gameHistory);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
