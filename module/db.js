@@ -6,7 +6,7 @@ const ObjectId = Schema.ObjectId;
 const config = require('config');
 let methods = {};
 let connectionStr = config.get('db.dbUrl');
-
+console.log(connectionStr);
 //"mongodb+srv://arvind:5RDiyMqWTkuMRjlT@cluster0-qr5jv.mongodb.net/PlayingCard?retryWrites=true&w=majority"
 // connection to mongoDb.
 mongoose.connect(connectionStr) // mongodb://localhost:27017/PlayingCard   ---- for your reference only.
