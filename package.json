@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "set NODE_ENV=dev&& node ./bin/www",
-    "start-prod": "set NODE_ENV=prod&& node ./bin/www"
+    "start": "set NODE_ENV=prod&& node ./bin/www"
   },
   "engines": {
     "node": "10.20.1"
