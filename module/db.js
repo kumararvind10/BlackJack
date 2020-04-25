@@ -5,11 +5,13 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 const config = require('config');
 let methods = {};
-let connectionStr = config.get('mongoUrl');
-console.log(connectionStr);
+//let connectionStr = config.get('mongoUrl');
+//console.log(connectionStr);
 //"mongodb+srv://arvind:5RDiyMqWTkuMRjlT@cluster0-qr5jv.mongodb.net/PlayingCard?retryWrites=true&w=majority"
 // connection to mongoDb.
-mongoose.connect(connectionStr) // mongodb://localhost:27017/PlayingCard   ---- for your reference only.
+
+
+mongoose.connect("mongodb+srv://arvind:5RDiyMqWTkuMRjlT@cluster0-qr5jv.mongodb.net/PlayingCard?retryWrites=true&w=majority") // mongodb://localhost:27017/PlayingCard   ---- for your reference only.
     .then(() => console.log("connected to Mongo db..."))
     .catch((err) => console.error("could not connect to MongoDb ", err));
 
