@@ -9,7 +9,6 @@ module.exports.getPlayerHistory = async (player_id) => {
     for (let each of response.response) {
         let data = each.toObject();
         delete data.deck;
-        delete data.dealerHand;
         result.push(data);
     }
 
