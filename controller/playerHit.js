@@ -11,7 +11,7 @@ router.get('/player/draw/:deck_id', async (req, res, next) => {
     try {
         const deck_id = req.params.deck_id;
 
-        if (deck_id === ":deck_id") return res.status(400).send("please provide valid deck count");   // Not generic but for time being.
+        if (deck_id === ":deck_id") return res.status(400).send("<h1>please provide valid deck count<h1>");   // Not generic but for time being.
 
 
         let result = await draw.drawPlayerCard(deck_id);
