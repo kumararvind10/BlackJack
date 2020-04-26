@@ -3,7 +3,7 @@ const db = require('./db');
 module.exports.getPlayerHistory = async (player_id) => {
     const response = await db.getHistory(player_id);
     
-    if(!response.status) return `<h2>There is no history in database for the given player id ${player_id}<h2>`;
+    if(!response.status) return `<h2>please provide valid player id ${player_id}<h2>`;
 
     let result = [];
     for (let each of response.response) {

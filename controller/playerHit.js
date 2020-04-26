@@ -5,11 +5,14 @@ const db = require('../module/db');
 const score = require('../module/scoreCalculate');
 
 //api endpoint for player draw card
- 
+
 router.get('/player/draw/:deck_id', async (req, res, next) => {
 
     try {
         const deck_id = req.params.deck_id;
+
+        if (deck_id === ":deck_id") return res.status(400).send("please provide valid deck count");   // Not generic but for time being.
+
 
         let result = await draw.drawPlayerCard(deck_id);
 
@@ -19,8 +22,8 @@ router.get('/player/draw/:deck_id', async (req, res, next) => {
             deck: result.response.deck,
             playerHand: result.response.playerHand,
             playerStatus: result.response.playerStatus,
-            dealerStatus:result.response.dealerStatus,
-            draw:true
+            dealerStatus: result.response.dealerStatus,
+            draw: true
         };
         let updateRes = await db.Game.updateOne({ _id: result.response.id }, { $set: param });
 
@@ -30,12 +33,12 @@ router.get('/player/draw/:deck_id', async (req, res, next) => {
 
         let historyGame = new db.GameHistory({
             deck: response.deck,
-            draw:true,
+            draw: true,
             playerId: response.playerId,
             playerHand: response.playerHand,
             dealerHand: response.dealerHand,
             playerStatus: response.playerStatus,
-            dealerStatus:response.dealerStatus,
+            dealerStatus: response.dealerStatus,
             status: true,
         });
 
@@ -48,7 +51,7 @@ router.get('/player/draw/:deck_id', async (req, res, next) => {
             Draw: true,
             remaining: response.deck.length,
             playerStatus: response.playerStatus,
-            DealerStatus:response.dealerStatus,
+            DealerStatus: response.dealerStatus,
             playerId: response.playerId
 
         };

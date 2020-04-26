@@ -58,8 +58,8 @@ router.get('/dealer/draw/:deck_id', async (req, res, next) => {
 
         let userRes = {
             success: true,
-            draw: response.draw,
             deck_id: response._id,
+            Draw: response.draw,
             playerId: response.playerId,
             remaining: response.deck.length,
             DealerStatus: response.dealerStatus,

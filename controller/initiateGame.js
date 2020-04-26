@@ -6,6 +6,8 @@ const initiateGame = require('../module/initiateGame');
 router.get('/game/initiate/:deck_count', async (req, res, next) => {
     try {
         const deck_count = parseInt(req.params.deck_count);
+        if (isNaN(deck_count) || deck_count < 0) return res.status(400).send("please provide valid deck count");
+
         const pId = Math.floor(Math.random() * Math.floor(456738)) + "P";
 
 
